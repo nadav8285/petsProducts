@@ -1,0 +1,86 @@
+
+.box{
+
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 100px;
+    margin-left: 100px;
+    
+    
+}
+.eachPrdct{
+    width: 450px;
+    height: auto;
+    margin: 35px;
+    padding: 20px;
+    margin-top: 35px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 8px;
+    
+    
+    
+}
+
+.lineHight{
+    line-height: 2;
+}
+.prdctTitle{
+    text-decoration: none;
+    color: black;
+}
+.prdctTitle:hover{
+    color: #009B77;
+}
+.upperPrdctTitle{
+    font-size:larger;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 14px;
+    list-style: none;
+}
+
+.mainPageHr{
+    border: none;
+    height: 1.5px;
+    background-color: #A9A9A9;
+}
+.prdctinfo{
+    background-color: #FFA500;
+    width: 100px;
+    height: 30px;
+    border:none;
+    color: white;
+    margin-left: 10px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.prdctbuy{
+    background-color: #228B22;
+    width: 100px;
+    height: 30px;
+    border:none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.prdctbtn{
+    text-align: center;
+}
+
+.notInStock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    margin-left: 40%;
+    margin-right: 40%;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+
+}

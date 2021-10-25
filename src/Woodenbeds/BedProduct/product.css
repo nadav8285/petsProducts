@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
+.upperMainProduct{
+    direction: rtl;
+    margin-top: 100px;
+    
+}
+h1, p, i, h4, h5, h6, li {
+    font-weight: bold;
+    font-family: "Alef Hebrew", sans-serif;
+}
+.productPageHr{
+    border: none;
+    height: 0.07px;
+    background-color: #A9A9A9;
+}
+.imageControl{
+      position: absolute;
+      margin-right: 5%;
+
+}
+
+.lix{
+    margin-right: 47%;
+}
+
+
