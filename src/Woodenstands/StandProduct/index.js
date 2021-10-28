@@ -1,7 +1,7 @@
 import { ProductsList } from '../../ProductsData';
 import { useContext } from 'react';
 import { useParams } from 'react-router';
-import Bed1 from '../../Pictures/WoodStands/firstStand.jpg'
+// import Bed1 from '../../Pictures/WoodStands/firstStand.jpg'
 
 export default function StandProduct() {
 

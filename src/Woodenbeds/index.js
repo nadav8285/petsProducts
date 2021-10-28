@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import './pr.css'
 import Bed1 from '../Pictures/WoodenBeds/firstBed.jpg'
 import { ProductsList } from '../ProductsData';
-import Cart_Payment_Btns from "../Cart_Payment_Btns";
+import CartPaymentBtns from "../CartPaymentBtns";
 import { uuid } from 'uuidv4';
 
 export default function Woodenbeds() {
@@ -39,7 +39,7 @@ export default function Woodenbeds() {
                                     <i>{x.photo}</i>
                                 </div>
 
-                                <Cart_Payment_Btns props={x} />
+                                <CartPaymentBtns props={x} />
 
                             </div>
                         )

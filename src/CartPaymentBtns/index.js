@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { CartContext } from "../Cart"
 import { NavLink } from "react-router-dom"
 
-export default function Cart_Payment_Btns({ props }) {
+export default function CartPaymentBtns({ props }) {
 
     const cart = useContext(CartContext)
 

@@ -111,7 +111,6 @@ export default function OrderPayment() {
     const handleInput = e => {
         const inputName = e.currentTarget.name;
         const value = e.currentTarget.value;
-
         setState(prev => ({ ...prev, [inputName]: value }));
     };
     return (<>

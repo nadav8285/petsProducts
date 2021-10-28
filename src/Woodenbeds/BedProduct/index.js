@@ -2,7 +2,7 @@ import { ProductsList } from '../../ProductsData';
 import { useContext } from 'react';
 import { useParams } from 'react-router';
 import Bed1 from '../../Pictures/WoodenBeds/firstBed.jpg'
-import Cart_Payment_Btns from '../../Cart_Payment_Btns';
+import CartPaymentBtns from '../../CartPaymentBtns';
 import './product.css'
 
 export default function BedProduct() {
@@ -35,7 +35,7 @@ export default function BedProduct() {
                             <button>Click Here</button>
                         </div> */}
 
-                        <Cart_Payment_Btns props={filterIt[0]} />
+                        <CartPaymentBtns props={filterIt[0]} />
                     </div>
                     <div className="flex-item productDescription">
                         <p>תיאור המוצר: בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה</p>

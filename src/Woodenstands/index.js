@@ -4,7 +4,7 @@ import Bed1 from '../Pictures/WoodStands/firstStand.jpg'
 import { ProductsList } from '../ProductsData';
 import { CartContext } from '../Cart'
 import { uuid } from "uuidv4";
-import Cart_Payment_Btns from "../Cart_Payment_Btns";
+import CartPaymentBtns from "../CartPaymentBtns";
 
 export default function Woodenstands() {
     const dataInfo = useContext(ProductsList)
@@ -44,7 +44,7 @@ export default function Woodenstands() {
                                     <i>{x.photo}</i>
                                 </div>
 
-                                <Cart_Payment_Btns props={x} />
+                                <CartPaymentBtns props={x} />
 
                             </div>
                         )
