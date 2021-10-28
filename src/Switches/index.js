@@ -4,7 +4,10 @@ import Woodenstands from "../Woodenstands";
 import BedProduct from "../Woodenbeds/BedProduct";
 import OrderSearch from "../OrderSearch";
 import StandProduct from "../Woodenstands/StandProduct";
+import CartPage from "../Cart/CartPage";
 import Home from "../Home";
+import Contact from "../Contact";
+import OrderPayment from "../OrderPayment";
 
 export default function Switches() {
 
@@ -12,11 +15,14 @@ export default function Switches() {
     return (
         <Switch>
             {/* <Route path="/home" component={Home} exact={true} /> */}
-            <Route path="/search/:orderId" component={OrderSearch} exact />
-            <Route path="/woodenbeds" component={Woodenbeds} exact />
-            <Route path="/woodenbeds/:bedname" component={BedProduct} exact />
-            <Route path="/woodenstands" component={Woodenstands} exact />
-            <Route path="/woodenstands/:standname" component={StandProduct} exact />
+            <Route path="/search" component={OrderSearch} exact />
+            <Route path="/cart" component={CartPage} exact />
+            <Route path="/checkout" component={OrderPayment} exact />
+            <Route path="/woodenbed" component={Woodenbeds} exact />
+            <Route path="/woodenbed/:bedname" component={BedProduct} exact />
+            <Route path="/woodenstand" component={Woodenstands} exact />
+            <Route path="/woodenstand/:standname" component={StandProduct} exact />
+            <Route path="/contact" component={Contact} exact />
 
             <Route component={Home} />
         </Switch>

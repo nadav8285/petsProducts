@@ -13,7 +13,7 @@ export default function StandProduct() {
         <>
             <div className='upperMainProduct'>
                 <div className="mainProduct">
-                    <img className="imageControl" style={{ width: '620px' }} src={Bed1} alt='bla'></img>
+                    {/* <img className="imageControls" style={{ width: '620px' }} src={Bed1} alt='bla'></img> */}
                     <div className="lix">
 
                         {filterIt.length === 0 ? "" : <div>

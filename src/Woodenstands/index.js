@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-// import './pr.css'
 import Bed1 from '../Pictures/WoodStands/firstStand.jpg'
 import { ProductsList } from '../ProductsData';
 import { CartContext } from '../Cart'
+import { uuid } from "uuidv4";
+import Cart_Payment_Btns from "../Cart_Payment_Btns";
 
 export default function Woodenstands() {
     const dataInfo = useContext(ProductsList)
     const cart = useContext(CartContext)
 
-    // const [products, setProducts] = useState()
 
     function cartControl(x) {
         cart.setCart([...cart.cart, x])
@@ -22,15 +22,17 @@ export default function Woodenstands() {
         <div className='moreupperbox'>
             <div className='upperbox'>
                 <div className="box">
-                    {filterIt.length === 0 ? "" : filterIt.map((x) => {
+                    {filterIt.length === 0 ? "" : filterIt.map((x, y) => {
+                        const filteredCategory = filterIt[y].category.split(" ").join("")
+
                         return (
-                            <div className='eachPrdct'>
+                            <div className='eachPrdct' key={uuid()}>
                                 <div className="upperPrdctTitle">
-                                    <NavLink activeClassName='active' className="prdctTitle" to={`/woodenstands/${x.name}`}>{x.name}</NavLink>
+                                    <NavLink activeClassName='active' className="prdctTitle" to={`/${filteredCategory}/${x.name}`}>{x.name}</NavLink>
                                 </div>
                                 <div className="photo">
 
-                                    <img className="image" style={{ width: '450px' }} src={Bed1} alt='ok' />
+                                    <img className="image" style={{ width: '400px' }} src={Bed1} alt='ok' />
                                 </div>
                                 <div className="lineHight">
                                     <hr className="mainPageHr" />
@@ -42,11 +44,7 @@ export default function Woodenstands() {
                                     <i>{x.photo}</i>
                                 </div>
 
-                                {Number(x.inStoke) === 0 ? <div className="notInStock">אזל מהמלאי</div> :
-                                    <div className='prdctbtn'>
-                                        <button onClick={() => cartControl(x)} className='prdctinfo'>הוסף לעגלה</button>
-                                        <NavLink activeClassName='active' to={'checkout'}><button className='prdctbuy'>לתשלום והזמנה</button></NavLink>
-                                    </div>}
+                                <Cart_Payment_Btns props={x} />
 
                             </div>
                         )

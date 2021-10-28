@@ -3,32 +3,31 @@ import { NavLink } from "react-router-dom";
 import './pr.css'
 import Bed1 from '../Pictures/WoodenBeds/firstBed.jpg'
 import { ProductsList } from '../ProductsData';
-import { CartContext } from '../Cart'
+import Cart_Payment_Btns from "../Cart_Payment_Btns";
+import { uuid } from 'uuidv4';
 
 export default function Woodenbeds() {
     const dataInfo = useContext(ProductsList)
-    const cart = useContext(CartContext)
 
-    function cartControl(x) {
-        cart.setCart([...cart.cart, x])
-    }
+
 
     const filterIt = dataInfo.products.filter(prdctName => prdctName.category === "wooden bed")
-
     return (
 
         <div className='moreupperbox'>
             <div className='upperbox'>
                 <div className="box">
-                    {filterIt === 0 ? "" : filterIt.map((x) => {
+                    {filterIt === 0 ? "" : filterIt.map((x, y) => {
+                        const filteredCategory = filterIt[y].category.split(" ").join("")
+                        // console.log(s, 'its filter')
                         return (
-                            <div className='eachPrdct'>
+                            <div className='eachPrdct' key={uuid()}>
                                 <div className="upperPrdctTitle">
-                                    <NavLink activeClassName='active' className="prdctTitle" to={`/woodenbeds/${x.name}`}>{x.name}</NavLink>
+                                    <NavLink activeClassName='active' className="prdctTitle" to={`/${filteredCategory}/${x.name}`}>{x.name}</NavLink>
                                 </div>
                                 <div className="photo">
 
-                                    <img className="image" style={{ width: '450px' }} src={Bed1} alt='ok' />
+                                    <img className="image" style={{ width: '400px' }} src={Bed1} alt='ok' />
                                 </div>
                                 <div className="lineHight">
                                     <hr className="mainPageHr" />
@@ -40,11 +39,7 @@ export default function Woodenbeds() {
                                     <i>{x.photo}</i>
                                 </div>
 
-                                {Number(x.inStoke) === 0 ? <div className="notInStock">אזל מהמלאי</div> :
-                                    <div className='prdctbtn'>
-                                        <button onClick={() => cartControl(x)} className='prdctinfo'>הוסף לעגלה</button>
-                                        <NavLink activeClassName='active' to={'checkout'}><button className='prdctbuy'>לתשלום והזמנה</button></NavLink>
-                                    </div>}
+                                <Cart_Payment_Btns props={x} />
 
                             </div>
                         )
