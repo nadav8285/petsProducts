@@ -2,18 +2,14 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Bed1 from '../Pictures/WoodStands/firstStand.jpg'
 import { ProductsList } from '../ProductsData';
-import { CartContext } from '../Cart'
 import { uuid } from "uuidv4";
 import CartPaymentBtns from "../CartPaymentBtns";
 
 export default function Woodenstands() {
     const dataInfo = useContext(ProductsList)
-    const cart = useContext(CartContext)
 
 
-    function cartControl(x) {
-        cart.setCart([...cart.cart, x])
-    }
+
 
     const filterIt = dataInfo.products.filter(prdctName => prdctName.category === "wooden stand")
 

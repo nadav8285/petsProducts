@@ -4,9 +4,18 @@ import { CartContext } from ".."
 import WoodenBed from '../../Pictures/WoodenBeds/firstBed.jpg'
 import WoodenStand from '../../Pictures/WoodStands/firstStand.jpg'
 import OrderPayment from "../../OrderPayment"
+import CartQuantityBtn from "../CartQuantityBtn"
+
 export default function CartPage() {
 
     const cartInfo = useContext(CartContext)
+
+    const unique = cartInfo.cart
+        .map(e => e['name'])
+        .map((e, i, final) => final.indexOf(e) === i && i)
+        .filter(obj => cartInfo.cart[obj])
+        .map(e => cartInfo.cart[e]);
+
 
 
     return (
@@ -16,7 +25,7 @@ export default function CartPage() {
                 <div className='upperbox'>
                     <h1 style={{ textAlign: 'center' }}>סל הקניות</h1>
                     <div className="box"  >
-                        {cartInfo.cart.length === 0 ? "" : cartInfo.cart.map((x, y) => {
+                        {cartInfo.cart.length === 0 ? "" : unique.map((x, y) => {
                             const filteredCategory = cartInfo.cart[y].category.split(" ").join("")
 
                             return (
@@ -35,6 +44,7 @@ export default function CartPage() {
                                         <i>מידה: {x.size}</i><br />
                                         <i>צבע: {x.color}</i><br />
                                         {/* <i>{x.photo}</i> */}
+                                        <CartQuantityBtn props={x} />
                                     </div>
 
                                 </div>
