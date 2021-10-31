@@ -6,4 +6,6 @@
 body {
     margin: 0;
     padding: 0;
+    background: rgba(0, 128, 0, 0.06) /* Green background with 30% opacity */
+
 }

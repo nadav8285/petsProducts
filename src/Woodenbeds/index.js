@@ -5,6 +5,9 @@ import Bed1 from '../Pictures/WoodenBeds/firstBed.jpg'
 import { ProductsList } from '../ProductsData';
 import CartPaymentBtns from "../CartPaymentBtns";
 import { uuid } from 'uuidv4';
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import { Carousel } from 'react-responsive-carousel';
+
 
 export default function Woodenbeds() {
     const dataInfo = useContext(ProductsList)

@@ -1,6 +1,8 @@
 import axios from "axios"
 import { useEffect, useState, useContext } from "react"
 import { OrderIdProvider } from "../SearchField"
+import Bed1 from '../Pictures/WoodStands/firstStand.jpg'
+import Bed2 from '../Pictures/WoodenBeds/firstBed.jpg'
 
 export default function OrderSearch() {
 
@@ -16,7 +18,7 @@ export default function OrderSearch() {
                 const res = await axios.get(`http://localhost:5000/readorder?orderTrackNum=${OrderId.param}`)
                 setOrder(res.data)
             } catch (e) {
-                console.log("ok");
+                console.log(e);
                 // setError(e.response?.data?.error || e.message)
             }
         }
@@ -46,13 +48,15 @@ export default function OrderSearch() {
             {products.length === 0 ? <>
                 <div>
                     <h3>
-                        Not Exist Order!</h3></div></> : products.map((x) => {
+                        Not Exist Order!</h3></div></> : products.map((x, y) => {
                             return (
 
-                                <div key={x.name}>
-                                    <h1>
-                                        {x.name}
-                                    </h1>
+                                <div className="searchRsltContainer" key={y}>
+                                    <div className="searchImage search-item"><img style={{ width: '200px' }} src={x.category === 'wooden stand' ? Bed1 : Bed2} /></div>
+                                    <div className="searchImage search-item">{x.name}</div>
+                                    <div className="searchImage search-item">{x.size}</div>
+                                    <div className="searchImage search-item">{products.length}</div>
+                                    <div className="searchImage search-item">{x.price}</div>
                                 </div>
                             )
                         })

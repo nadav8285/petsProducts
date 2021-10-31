@@ -13,7 +13,7 @@ export default function CartPaymentBtns({ props }) {
     return (<>
         <div className='prdctbtn'>
             <button onClick={() => cartControl(props)} className='prdctinfo'>הוסף לעגלה</button>
-            <NavLink activeClassName='active' to='/checkout'><button onClick={() => cartControl(props)} className='prdctbuy'>לתשלום והזמנה</button></NavLink>
+            <NavLink activeClassName='active' to='/cart'><button onClick={() => cartControl(props)} className='prdctbuy'>לתשלום והזמנה</button></NavLink>
         </div>
 
 

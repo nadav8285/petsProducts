@@ -2,6 +2,7 @@ import axios from "axios"
 import { useContext, useEffect, useState } from "react"
 import styled, { createGlobalStyle, css } from 'styled-components';
 import { CartContext } from "../Cart"
+import { useHistory } from "react-router";
 const GlobalStyle = createGlobalStyle`
   html {
     height: 100%
@@ -76,6 +77,7 @@ export default function OrderPayment() {
     const cart = useContext(CartContext)
     const [cartProductIds, setCartProductIds] = useState([])
     const [state, setState] = useState();
+    const homeHistory = useHistory()
 
     function tryNow() {
 
@@ -99,6 +101,7 @@ export default function OrderPayment() {
             const res = await axios.post(`http://localhost:5000/createorder`, values)
             alert(res.data.orderTrackNum)
             cart.setCart([])
+            homeHistory.push('/home')
         } catch (e) {
             console.log("error")
         }

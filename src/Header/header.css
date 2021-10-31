@@ -120,11 +120,10 @@
     margin-top: 5px;
     top: 15px;
     margin-left: 15px;
-    background-color: white;
+    background: rgba(0, 128, 0, 0);
     border: none;
   cursor: pointer;
   font-size: 13px;
-  border-radius: 50%;
   align-items: center;
 
 }
