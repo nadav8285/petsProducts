@@ -23,7 +23,7 @@ export default function CartPage() {
         <>
             <div className='moreupperbox'>
                 <div className='upperbox'>
-                    <h1 style={{ textAlign: 'center' }}>סל הקניות</h1>
+                    <h1 style={{ textAlign: 'center', color: '#f2a128' }}>סל הקניות</h1>
                     <div className="box"  >
                         {cartInfo.cart.length === 0 ? "" : unique.map((x, y) => {
                             const filteredCategory = cartInfo.cart[y].category.split(" ").join("")
@@ -40,7 +40,7 @@ export default function CartPage() {
                                     <div className="lineHight">
                                         <hr className="mainPageHr" />
                                         <p style={{ fontWeight: 'bold' }}>תיאור המוצר: בלה בלה בלה</p>
-                                        <i>מחיר: {x.price} ש"ח</i><br />
+                                        <i className='productPrice'>מחיר: {x.price} ש"ח</i><br />
                                         <i>מידה: {x.size}</i><br />
                                         <i>צבע: {x.color}</i><br />
                                         {/* <i>{x.photo}</i> */}

@@ -8,6 +8,7 @@ export default function CartPaymentBtns({ props }) {
 
     function cartControl(x) {
         cart.setCart([...cart.cart, x])
+
     }
 
     return (<>

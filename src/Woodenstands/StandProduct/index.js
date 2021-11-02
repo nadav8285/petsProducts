@@ -1,19 +1,44 @@
 import { ProductsList } from '../../ProductsData';
 import { useContext } from 'react';
 import { useParams } from 'react-router';
-// import Bed1 from '../../Pictures/WoodStands/firstStand.jpg'
+import Bed1 from '../../Pictures/WoodStands/firstStand.jpg'
+import CartPaymentBtns from '../../CartPaymentBtns';
 
 export default function StandProduct() {
 
-    const { products } = useContext(ProductsList)
+    const products = useContext(ProductsList)
     const { standname } = useParams()
-    const filterIt = products.filter(prdctName => prdctName.name === standname)
+    const filterIt = products.products.filter(prdctName => prdctName.name === standname)
+
+    // const filterIt = products.filter(prdctName => prdctName.name === standname)
 
     return (
         <>
-            <div className='upperMainProduct'>
+
+            {filterIt.length === 0 ? "" :
+                <div className="flexbox-container">
+                    <img className="flex-item imageControl" src={Bed1} alt='bla'></img>
+
+                    <div className="flex-item productTitle">
+                        <div className="alignHeader">
+                            <div > <h1 style={{ fontWeight: 'inherit', fontSize: '35px', margin: 'auto' }}>מעמד לקערות {filterIt[0].name} לכלבים וחתולים מעץ</h1></div>
+                            <div className="centerPrice">   <i style={{ fontWeight: 'bold', fontSize: '30px' }}>₪{filterIt[0].price}</i></div></div>
+
+                        <CartPaymentBtns props={filterIt[0]} />
+                    </div>
+                    <div style={{ marginTop: '15px' }} className="flex-item productDescription">
+                        <p>תיאור המוצר: בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה</p>
+                        <i>מידות: {filterIt[0].size}</i><br />
+                        <li>3 ימי עסקים!</li>
+                        <li>אפשרות לשליח עד הבית או איסוף עצמי</li>
+                        <li>המחיר הזול ביותר</li>
+                        <p>תיאור המוצר בהרחבה: בלה בלה בלה בלה בלה</p></div>
+
+                </div>
+
+            }
+            {/* <div className='upperMainProduct'>
                 <div className="mainProduct">
-                    {/* <img className="imageControls" style={{ width: '620px' }} src={Bed1} alt='bla'></img> */}
                     <div className="lix">
 
                         {filterIt.length === 0 ? "" : <div>
@@ -31,7 +56,7 @@ export default function StandProduct() {
                         <p>תיאור המוצר בהרחבה: בלה בלה בלה בלה בלה</p>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 

@@ -35,7 +35,11 @@ export default function Header() {
                         <NavLink className="nav" to={''}>אודות</NavLink>
                         <NavLink className="nav" to='/contact'>צור קשר</NavLink>
                     </div>
-                    <button onClick={() => setLinksChange(!linksChange)}>Open</button>
+                    <button onClick={() => setLinksChange(!linksChange)}>
+                        <div className="menuButton"></div>
+                        <div className="menuButton"></div>
+                        <div className="menuButton"></div>
+                    </button>
                 </div>
                 <div className="middleLogo">
                     Logo and Name here

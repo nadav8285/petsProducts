@@ -1,0 +1,23 @@
+.topSearchRsltContainer{
+    margin-right: 5px;
+    border-radius: 10px;
+    margin: 15px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+
+
+}
+.searchRsltContainer{ 
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 17px;
+
+}
+ 
+.search-item{
+    width: 100%;
+    background-color: #f2a128;
+}

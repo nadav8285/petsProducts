@@ -1,26 +1,11 @@
 @import url(https://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 
-.tryBig{
-    /* height: 500px; */
-    
-}
 
-.items1{
-    
-    width: 200px;
-    margin: 10px;
-}
-.item0{
-    background-color: green;
-}
 
-.item1{
-    background-color: red;
-}
+
 
 
 .flexbox-container{
-    /* background-color: blue; */
     box-shadow: 0 0 2px rgb(0 0 0 / 20%);
     margin: 20px;
     height: auto;
@@ -29,7 +14,7 @@
     display: flex;
     flex-wrap: wrap;
     
-    /* background-color: red; */
+    background-color: white;
 
 
     
@@ -41,7 +26,7 @@
     /* margin: 40px; */
     height: auto;
     /* background-color: blue; */
-    margin-right: 30px;
+    margin-right: 4%;
 
 
 
@@ -58,22 +43,19 @@
 
     width: 40%;
 
-    margin-top: 30px;
+    margin-top: 2%;
 
-    margin-right: 30px;
 }
 .alignHeader{
-    height: 80%;
+    height: 95%;
     display: flex;
+    margin-right: 5%;
+
     flex-direction: column;
 justify-content: space-between;
 }
 .centerPrice{
     text-align: center;
-}
-.underPrdctTitle{
-    /* background-color: red; */
-    /* display: flex; */
 }
 .productDescription{
     width: 50%;
@@ -87,32 +69,4 @@ justify-content: space-between;
     .flex-item{
         width: 91%;
         }
-        .productTitle{
-            /* padding-right: 0px; */
-        }
 }
-/*@media screen and (max-width: 950px) {
-    
-    .imageControl{
-        margin-right: 50px;
-    }
-    
-}
-
-@media screen and (max-width: 900px) {
-    
-    .imageControl{
-        margin-right: 30px;
-    }
-    
-}
-@media screen and (max-width: 850px) {
-
-    .flexbox-container{
-        flex-wrap: wrap;
-    }
-    .imageControl{
-        margin: 10px;
-    }
-    
-} */

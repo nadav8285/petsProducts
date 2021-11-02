@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from "react"
 import { OrderIdProvider } from "../SearchField"
 import Bed1 from '../Pictures/WoodStands/firstStand.jpg'
 import Bed2 from '../Pictures/WoodenBeds/firstBed.jpg'
+import './ordersearch.css'
 
 export default function OrderSearch() {
 
@@ -44,25 +45,32 @@ export default function OrderSearch() {
 
 
     return (
-        <div>
-            {products.length === 0 ? <>
-                <div>
-                    <h3>
-                        Not Exist Order!</h3></div></> : products.map((x, y) => {
-                            return (
 
-                                <div className="searchRsltContainer" key={y}>
-                                    <div className="searchImage search-item"><img style={{ width: '200px' }} src={x.category === 'wooden stand' ? Bed1 : Bed2} /></div>
-                                    <div className="searchImage search-item">{x.name}</div>
-                                    <div className="searchImage search-item">{x.size}</div>
-                                    <div className="searchImage search-item">{products.length}</div>
-                                    <div className="searchImage search-item">{x.price}</div>
+        <>
+            {products.length === 0 ? "bla" :
+                <div>
+                    <div className="searchRsltContainer">
+                        <div className="searchImage search-item"></div>
+                        <div style={{ fontWeight: 'bold' }} className="searchName search-item">שם המוצר:</div>
+                        <div style={{ fontWeight: 'bold' }} className="searchSize search-item">מידות:</div>
+                        <div style={{ fontWeight: 'bold' }} className="searchPrice search-item">מחיר:</div>
+                    </div>
+                    <div className="topSearchRsltContainer">
+
+                        {products.map((x, y) => {
+                            return (
+                                <div className="searchRsltContainer">
+                                    <div className="searchImage search-item"><img style={{ width: '60%', borderRadius: '10px' }} alt="" src={x.category === 'wooden stand' ? Bed1 : Bed2} /></div>
+                                    <div className="searchName search-item">{x.name}</div>
+                                    <div className="searchSize search-item">{x.size}</div>
+                                    <div className="searchPrice search-item">₪{x.price}</div>
                                 </div>
                             )
-                        })
+                        })}
+                    </div>
+                </div>}
 
-            }
-        </div>
+        </>
 
     )
 }

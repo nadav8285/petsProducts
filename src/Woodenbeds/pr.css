@@ -3,19 +3,19 @@
     font-family: "Alef Hebrew", sans-serif;
     direction: rtl;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    margin-right: 100px;
-    margin-left: 100px;
+    flex-wrap: wrap;
+    /* margin-right: 100px;
+    margin-left: 100px; */
     
     
     
 }
 .eachPrdct{
-    width: 400px;
+    width: 40%;
     height: auto;
     margin: 35px;
-    padding: 20px;
+    padding: 10px;
     margin-top: 35px;
     background-color: #fff;
     border-radius: 10px;
@@ -27,16 +27,22 @@
 
 .lineHight{
     line-height: 2;
+    font-weight: bold;
 }
 .prdctTitle{
     text-decoration: none;
     color: black;
 }
 .prdctTitle:hover{
-    color: #009B77;
+    color: white;
+}
+.productPrice{
+    color: #f2a128;
+    font-size:larger;
+    font-weight: bold;
 }
 .upperPrdctTitle{
-    font-size:larger;
+    font-size:x-large;
     font-weight: bold;
     text-align: center;
     margin-top: 0px;
@@ -50,8 +56,8 @@
     background-color: #A9A9A9;
 }
 .prdctinfo{
-    background-color: #FFA500;
-    width: 100px;
+    background-color: #f2a128;
+    width: 35%;
     height: 30px;
     border:none;
     color: white;
@@ -62,7 +68,7 @@
 }
 .prdctbuy{
     background-color: #228B22;
-    width: 100px;
+    width: 35%;
     height: 30px;
     border:none;
     color: white;
@@ -72,6 +78,7 @@
 }
 
 .prdctbtn{
+    
     text-align: center;
 }
 
@@ -87,3 +94,11 @@
     font-weight: bold;
 
 }
+
+@media only screen and (max-width: 900px){
+    .eachPrdct{
+        width: 100%;
+    }
+}
+
+

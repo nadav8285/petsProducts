@@ -23,21 +23,9 @@ export default function BedProduct() {
                             <div > <h1 style={{ fontWeight: 'inherit', fontSize: '35px', margin: 'auto' }}>מיטה {filterIt[0].name} לכלבים וחתולים מעץ</h1></div>
                             <div className="centerPrice">   <i style={{ fontWeight: 'bold', fontSize: '30px' }}>₪{filterIt[0].price}</i></div></div>
 
-                        {/* <div className="underPrdctTitle">
-                            <label for="size">מידה</label>
-                            <select className="select" name="size" id="cars">
-                                <option value="45x20">45x20</option>
-                                <option value="60x40">60x40</option>
-                                <option value="90x60">90x60</option>
-                            </select>
-                            <input type="text" className="color_size_input" />
-                            <input type="text" className="color_size_input" />
-                            <button>Click Here</button>
-                        </div> */}
-
                         <CartPaymentBtns props={filterIt[0]} />
                     </div>
-                    <div className="flex-item productDescription">
+                    <div style={{ marginTop: '15px' }} className="flex-item productDescription">
                         <p>תיאור המוצר: בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה</p>
                         <i>מידות: {filterIt[0].size}</i><br />
                         <li>3 ימי עסקים!</li>
