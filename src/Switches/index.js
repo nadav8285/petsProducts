@@ -17,7 +17,6 @@ export default function Switches() {
             {/* <Route path="/home" component={Home} exact={true} /> */}
             <Route path="/search" component={OrderSearch} exact />
             <Route path="/cart" component={CartPage} exact />
-            <Route path="/checkout" component={OrderPayment} exact />
             <Route path="/woodenbed" component={Woodenbeds} exact />
             <Route path="/woodenbed/:bedname" component={BedProduct} exact />
             <Route path="/woodenstand" component={Woodenstands} exact />

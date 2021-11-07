@@ -1,19 +1,20 @@
 .upperCartContainer{
     direction: rtl;
+    /* display: flex; */
     
 }
 .cartContainer{
     display: flex;
-    margin-right: 10px;
-    width: 90%;
-    
-    
+    width: 100%;
+    /* margin-right: 5px; */
 }
 
+
+
+
 .cartItem{
-    width: 100%;
+    width: 20%;
     margin: 2px;
-    height: auto;
     
 }
 .cartItem h3{
@@ -26,13 +27,14 @@
 }
 .cartItem h4{
     display: flex;
-    height: 60px;
-    padding-right: 10px;
+    /* height: 60px; */
     font-size: 17px;
     align-items: center;
+    margin-right: 5px;
+
 }
 .cartImage{
-    width: 100%;
+    width:100%;
     margin-right: 0;
 }
 

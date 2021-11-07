@@ -15,16 +15,11 @@ export default function DeleteProduct({ props }) {
                 break
             }
         }
-
-        // cartContext.setCart(filteredName)
-        // props.props(5)
-        // setTotalPrice(prevTotalPrice => prevTotalPrice - (Number(x.price) * cartPriceUpdate))
-        // console.log(filteredName)
     }
 
     return (
         <>
-            <button style={{ border: 'none', cursor: 'pointer' }} onClick={handleDeleteProdctBtn} >X</button>
+            <button className="fa fa-trash" style={{ border: 'none', cursor: 'pointer', fontSize: '15px', backgroundColor: 'rgba(0, 128, 0, 0.00)' }} onClick={handleDeleteProdctBtn} />
 
 
         </>

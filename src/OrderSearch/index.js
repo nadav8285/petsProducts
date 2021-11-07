@@ -1,10 +1,12 @@
 import axios from "axios"
 import { useEffect, useState, useContext } from "react"
 import { OrderIdProvider } from "../SearchField"
-import Bed1 from '../Pictures/WoodStands/firstStand.jpg'
+import Stand1 from '../Pictures/WoodStands/firstStand.jpg'
 import Bed2 from '../Pictures/WoodenBeds/firstBed.jpg'
+import { NavLink } from "react-router-dom"
 import './ordersearch.css'
 
+const ifActiveOrder = { inprocess: 'ממתין לאישור', inprocessPhoto: 'yellow', active: 'ההזמנה אושרה! המוצר\ים בהכנה...', activePhoto: '#415894', done: 'ההזמנה מוכנה', donePhoto: 'green' }
 export default function OrderSearch() {
 
     const OrderId = useContext(OrderIdProvider)
@@ -47,28 +49,66 @@ export default function OrderSearch() {
     return (
 
         <>
-            {products.length === 0 ? "bla" :
-                <div>
-                    <div className="searchRsltContainer">
-                        <div className="searchImage search-item"></div>
-                        <div style={{ fontWeight: 'bold' }} className="searchName search-item">שם המוצר:</div>
-                        <div style={{ fontWeight: 'bold' }} className="searchSize search-item">מידות:</div>
-                        <div style={{ fontWeight: 'bold' }} className="searchPrice search-item">מחיר:</div>
-                    </div>
-                    <div className="topSearchRsltContainer">
+            <h1 style={{ textAlign: 'center', color: '#415894' }}>מעקב הזמנה</h1>
 
-                        {products.map((x, y) => {
+            <div style={{ display: 'flex', direction: 'rtl' }}>
+
+                <div style={{ width: '80%' }}>
+                    <div className='upperCartContainer'>
+                        <div className='cartContainer' >
+                            <div className='cartItem'>
+                                <h3> </h3>
+
+                            </div>
+                            <div className='cartItem cartName'>
+                                <h3>מוצר</h3>
+                            </div>
+                            <div className='cartItem cartSize'>
+                                <h3>מידה</h3>
+                            </div>
+                            <div className='cartItem cartColor'>
+                                <h3>צבע</h3>
+                            </div>
+                            <div className='cartItem cartPrice'>
+                                <h3>מחיר</h3>
+                            </div>
+
+                        </div>
+
+                        {products.length === 0 ? "" : products.map((x, y) => {
+                            const filteredCategory = products[y].category.split(" ").join("")
                             return (
-                                <div className="searchRsltContainer">
-                                    <div className="searchImage search-item"><img style={{ width: '60%', borderRadius: '10px' }} alt="" src={x.category === 'wooden stand' ? Bed1 : Bed2} /></div>
-                                    <div className="searchName search-item">{x.name}</div>
-                                    <div className="searchSize search-item">{x.size}</div>
-                                    <div className="searchPrice search-item">₪{x.price}</div>
+                                <div className='cartContainer'>
+                                    <div className='cartItem'>
+                                        <img src={x.category === 'wooden bed' ? Bed2 : Stand1} alt="" className='cartImage' />
+                                    </div>
+                                    <div className='cartItem'><h4><NavLink style={{ textDecoration: 'none', color: '#415894' }} activeClassName='active' to={`/${filteredCategory}/${x.name}`} >{x.name}</NavLink>
+                                    </h4></div>
+                                    <div className='cartItem'><h4 >{x.size}
+                                    </h4></div>
+                                    <div className='cartItem'><h4>{x.color}
+                                    </h4></div>
+                                    <div className='cartItem'><h4>{x.price}₪
+                                    </h4></div>
                                 </div>
+
                             )
                         })}
                     </div>
-                </div>}
+                </div>
+                <div className='cartItem' style={{ display: 'flex', marginLeft: '15px', flexDirection: 'column' }}>
+                    <div >
+                        <h3>סטטוס הזמנה</h3>
+                    </div>
+                    <div style={{ display: 'flex' }}>
+                        <div className='activeStatusColor' style={{ backgroundColor: ifActiveOrder[order.active + 'Photo'], marginLeft: '5px' }} />
+                        <div style={{ fontWeight: 'bold' }}>{ifActiveOrder[order.active]}</div></div><br />
+                    <br /> <i >קבלת המוצרים ע"פ בחירתך באמצעות-<i style={{ fontWeight: 'bold' }}> {order.delivery ? 'שליח עד הבית' : 'איסוף עצמי'}</i></i>
+                    <br />
+                    <i>סה"כ {order.paid ? 'שולם' : 'נותר לשלם'}<i style={{ fontWeight: 'bold' }}> ₪{order.totalPrice}</i></i>
+                </div>
+            </div>
+
 
         </>
 
