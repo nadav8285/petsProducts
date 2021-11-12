@@ -1,11 +1,13 @@
 .navmenu{
     background-color: #f2a128;
+    position: fixed;
     display: flex;
     direction: rtl;
     width: 100%;
-    height: 80px;
+    height: 90px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+
 }
 .navmenu .middleLogo{
 
@@ -13,7 +15,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 30px;
+    /* margin-right: 30px; */
+    /* background-color: rebeccapurple; */
 }
 .navmenu .rightSide{
     flex: 50%;
@@ -65,7 +68,7 @@
     display: flex;
 }
 
-@media only screen and (max-width: 850px){
+ @media only screen and (max-width: 100px){
     .navmenu .rightSide .links .nav{
         font-size: 15px;
     }
@@ -109,6 +112,34 @@
 
 
 
+@media screen and (min-width: 1000px)
+{
+    
+    .logoPic{
+        
+        height: 70%;
+        width: 45%;
+    }
+}
+@media screen and (max-width: 1000px)
+{
+    .belowLogo{
+        display: none;
+        
+    }
+    .logoPic{
+        font-size: 15px;
+        /* font-size: 500px;     */
+        height: 70px;
+    }
+}
+/* @media screen and (max-width: 870px)
+{
+    .belowLogo{
+        font-size: 13px;
+        font-weight: bolder;
+    }
+} */
 
 
 
@@ -126,8 +157,9 @@
 .stickyCart{
     position: -webkit-sticky;
     position: sticky;
-    margin-top: 5px;
-    top: 15px;
+    top: 95px;
+    margin-top: 95px;
+
     margin-left: 15px;
     background: rgba(0, 128, 0, 0);
     border: none;
@@ -141,6 +173,7 @@
 
 .fa-stack[data-count]:after{
   position:absolute;
+  
   right:0%;
   top:0%;
   content: attr(data-count);

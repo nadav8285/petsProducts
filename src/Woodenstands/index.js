@@ -24,7 +24,16 @@ export default function Woodenstands() {
     const filterIt = dataInfo.products.filter(prdctName => prdctName.category === "wooden stand")
 
     const { items } = state
-    return (
+    return (<>
+        <div style={{ direction: 'rtl', marginRight: '25px' }}>
+            <div style={{ width: '60%', fontSize: '18px', fontFamily: "Alef Hebrew" }}>
+                <h1>מעמד לקערות אוכל ומים מעץ מלא מסוג אורן לכלבים וחתולים</h1>
+                <h2>היגיינה, הרבה פחות חיידקים ומחלות</h2>
+                <p>מלבד היותו מוצר יפה המוסיף לגיוון העיצוב בבית, מעמד לקערות מעץ מונע מלכלוכים, שיערות וחיידקים רבים להכנס אל תוך מי השתיה והאוכל של הכלבים או החתולים שלנו בכך שהוא מעט מוגבה מהרצפה, וכך לקערות עצמן אין כל מגע עם החלקים הפחות היגיינים בסביבת הכלב והחתול.
+                </p>
+                <i>לפניכם מגוון רחב של מעמדים לקערות אוכל ומים לכלבים וחתולים. בחרו את המעמד לקערות המתאים ביותר עבורכם ועבור חיית המחמד שלכם! אם אתם לא בטוחים לגבי המידות המתאימות, אל תהססו לפנות אלינו ונשמח לעזור לכם לבחור את המעמד המתאים ביותר.</i>
+            </div>
+        </div>
 
         <div className='moreupperbox'>
             <div className='upperbox'>
@@ -62,7 +71,7 @@ export default function Woodenstands() {
 
         </div>
 
-    )
+    </>)
 
 
 }

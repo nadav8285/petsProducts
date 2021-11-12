@@ -39,7 +39,7 @@ export default function CartPage() {
     return (
 
         <>
-            <h1 style={{ textAlign: 'center', color: '#415894' }}>סל הקניות</h1>
+            <h1 style={{ textAlign: 'center', color: '#415894' }}>סל הקניות ({cartInfo.cart.length})</h1>
             <div style={{ display: 'flex', direction: 'rtl' }}>
 
                 <div style={{ width: '80%' }}>
@@ -99,7 +99,7 @@ export default function CartPage() {
                             <h4 style={{ marginRight: '25px' }}>סה"כ מוצרים: {cartInfo.cart.length}</h4>
                         </div>
                         <div>
-                            <DeliveryOrTakeaway delivery={{ setDelivery }} />
+                            <DeliveryOrTakeaway delivery={{ setDelivery }} totalPriceProps={totalPrice} />
 
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>

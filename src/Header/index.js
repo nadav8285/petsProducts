@@ -4,6 +4,7 @@ import { CartContext } from '../Cart'
 import { useContext } from 'react'
 import { useState } from 'react'
 import { OrderIdProvider } from '../SearchField'
+import Logo from '../Pictures/logo.png'
 
 export default function Header() {
     const cartInfo = useContext(CartContext)
@@ -32,7 +33,6 @@ export default function Header() {
                         <NavLink className="nav" to='/home'>בית</NavLink>
                         <NavLink className="nav" to='/woodenbed'>מיטות לכלבים</NavLink>
                         <NavLink className="nav" to='/woodenstand'>מעמד לקערות</NavLink>
-                        <NavLink className="nav" to={''}>אודות</NavLink>
                         <NavLink className="nav" to='/contact'>צור קשר</NavLink>
                     </div>
                     <button onClick={() => setLinksChange(!linksChange)}>
@@ -41,8 +41,12 @@ export default function Header() {
                         <div className="menuButton"></div>
                     </button>
                 </div>
-                <div className="middleLogo">
-                    Logo and Name here
+                <div className="middleLogo" style={{ flexDirection: 'column', color: 'black' }} >
+                    <img className='logoPic' src={Logo} alt='s' />
+
+                    <div className='belowLogo' style={{ fontSize: '17px', color: '#282828' }}>
+                        <i >ריהוט דקורטיבי בעיצוב מיוחד לכלבים וחתולים</i>
+                    </div>
                 </div>
 
                 <div className="leftSide" >

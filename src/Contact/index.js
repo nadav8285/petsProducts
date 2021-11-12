@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
   body {
       
     font-family: Arial, Helvetica, sans-serif; 
-    height: 100%;
     margin: 0;
     color: #555;
   }
@@ -32,8 +31,8 @@ const StyledFormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
-  padding: 0 20px;
+  height: 120vh;
+  padding: 0 20px 40px 0;
 `;
 
 const StyledForm = styled.form`
@@ -200,9 +199,17 @@ function Contact() {
             </StyledError>
           )}
           <StyledButton type="submit">לאישור ושליחה</StyledButton>
+          <div style={{ fontSize: '18px' }}>
+            <h3>שעות הפעילות שלנו:</h3>
+            <h5>ימים א-ה בין השעות 08:00-18:00</h5>
+            <h5 >ימי שישי וערבי חג 08:00-15:00</h5>
+            <h5 >פלאפון ליצירת קשר: 052-667-9872</h5>
+            <h5 >דוא"ל: pethouse@gmail.com</h5>
+          </div>
         </StyledForm>
       </StyledFormWrapper>
     </>
+
   );
 }
 

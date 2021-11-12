@@ -7,7 +7,6 @@ import StandProduct from "../Woodenstands/StandProduct";
 import CartPage from "../Cart/CartPage";
 import Home from "../Home";
 import Contact from "../Contact";
-import OrderPayment from "../OrderPayment";
 
 export default function Switches() {
 

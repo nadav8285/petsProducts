@@ -1,23 +1,9 @@
 import axios from "axios"
 import { useContext, useEffect, useState } from "react"
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CartContext } from "../Cart"
-import { useHistory, useLocation } from "react-router";
-const GlobalStyle = createGlobalStyle`
-  html {
-    height: 100%
-    
-  }
+import { useHistory } from "react-router";
 
-  body {
-      
-    font-family: Arial, Helvetica, sans-serif; 
-    background: white;
-    height: 100%;
-    margin: 0;
-    color: #555;
-  }
-`;
 
 const sharedStyles = css`
 
@@ -78,7 +64,6 @@ export default function OrderPayment({ priceAfterAll, delivery }) {
     const [cartProductIds, setCartProductIds] = useState([])
     const [state, setState] = useState();
     const homeHistory = useHistory()
-    const navLocation = useLocation()
     function tryNow() {
 
         const mapIt = cart.cart.map((x) => x._id)
@@ -121,8 +106,7 @@ export default function OrderPayment({ priceAfterAll, delivery }) {
     };
     return (<>
         <div>
-            {console.log(priceAfterAll, delivery)}
-            {/* <GlobalStyle /> */}
+
             <StyledFormWrapper>
                 <StyledForm onSubmit={handleForm}>
                     <h2 style={{ textAlign: 'center' }}>פרטי הזמנה</h2>
