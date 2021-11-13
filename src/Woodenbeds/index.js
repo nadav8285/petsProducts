@@ -58,11 +58,10 @@ export default function Woodenbeds() {
                                 <div className="lineHight">
                                     <hr className="mainPageHr" />
                                     <p >תיאור המוצר: בלה בלה בלה</p>
-                                    <i className='productPrice' >מחיר: {x.price} ש"ח</i><br />
-                                    <i>מידה: {x.size}</i><br />
-                                    <i>צבע: {x.color}</i><br />
-                                    <i style={{ color: Number(x.inStoke) === 0 ? 'red' : 'green' }}>במלאי: {x.inStoke}</i><br />
-                                    <i>{x.photo}</i>
+                                    <i className='productPrice' >מחיר: 450₪- 649₪</i><br />
+                                    <i> מידות במלאי: {x.productInfo.map((z) => { return <i> | {z.size}</i> })} </i><br />
+                                    <i>צבעים במלאי: {x.color.map((z) => { return <i> | {z}</i> })}</i>
+                                    <i>{console.log(x)}</i>
                                 </div>
 
                                 <CartPaymentBtns props={x} />

@@ -106,8 +106,7 @@ export default function OrderPayment({ priceAfterAll, delivery }) {
     };
     return (<>
         <div>
-
-            <StyledFormWrapper>
+            {delivery ? <StyledFormWrapper>
                 <StyledForm onSubmit={handleForm}>
                     <h2 style={{ textAlign: 'center' }}>פרטי הזמנה</h2>
                     <label htmlFor="firstName">שם פרטי</label>
@@ -156,8 +155,43 @@ export default function OrderPayment({ priceAfterAll, delivery }) {
 
                     <StyledButton type="submit">בצע הזמנה</StyledButton>
                 </StyledForm>
-            </StyledFormWrapper>
+            </StyledFormWrapper> : <StyledFormWrapper>
+                <StyledForm onSubmit={handleForm}>
+                    <h2 style={{ textAlign: 'center' }}>פרטי הזמנה</h2>
+                    <label htmlFor="firstName">שם פרטי</label>
+                    <StyledInput
+                        type="text"
+                        name="firstName"
+                        onChange={handleInput}
+                        required
+                    />
+                    <label htmlFor="lastName">שם משפחה</label>
+                    <StyledInput
+                        type="text"
+                        name="lastName"
+                        onChange={handleInput}
+                        required
+                    />
+                    <label htmlFor="phoneNumber">מס' נייד</label>
+                    <StyledInput
+                        type="text"
+                        name="phoneNumber"
+                        onChange={handleInput}
+                        required
+                    />
+                    <label htmlFor="email">כתובת דוא"ל</label>
+                    <StyledInput
+                        type="email"
+                        name="email"
+                        onChange={handleInput}
+                        required
+                    />
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <StyledButton type="submit">לביצוע הזמנה</StyledButton></div>
+                </StyledForm>
+            </StyledFormWrapper>}
         </div>
+
 
     </>
     )

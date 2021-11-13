@@ -198,7 +198,10 @@ function Contact() {
               <p>{error}</p>
             </StyledError>
           )}
-          <StyledButton type="submit">לאישור ושליחה</StyledButton>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+
+            <StyledButton type="submit">לאישור ושליחה</StyledButton>
+          </div>
           <div style={{ fontSize: '18px' }}>
             <h3>שעות הפעילות שלנו:</h3>
             <h5>ימים א-ה בין השעות 08:00-18:00</h5>

@@ -51,9 +51,11 @@ export default function OrderSearch() {
 
         <>
             {products.length === 0 ? "Not Exist Order" :
-                <div>
-                    <h1 style={{ textAlign: 'center', color: '#415894' }}>מעקב הזמנה</h1>
-
+                <div className="orderSearchContainer">
+                    <div style={{ textAlign: 'center', direction: 'rtl' }}>
+                        <h2 style={{ color: '#415894' }}>תודה על הזמנתך {order.firstName} {order.lastName}!</h2>
+                        <h3>אנו עושים כמיטב יכולתנו שהמוצרים יהיו מוכנים במהירות ובמקצעויות האפשרית.</h3>
+                    </div>
                     <div style={{ display: 'flex', direction: 'rtl' }}>
 
                         <div style={{ width: '80%' }}>
@@ -102,13 +104,17 @@ export default function OrderSearch() {
 
                         <div className='cartItem' style={{ display: 'flex', marginLeft: '15px', flexDirection: 'column' }}>
                             <div>
-                                <h3>סטטוס הזמנה</h3>
+                                <h3>פרטי הזמנה</h3>
                             </div>
+                            <h4 style={{ marginBottom: '5px', marginRight: '5px' }}>סטטוס הזמנה:</h4>
                             <div style={{ display: 'flex' }}>
                                 <div className='activeStatusColor' style={{ backgroundColor: ifActiveOrder[order.active + 'Photo'], marginLeft: '5px' }} />
                                 <div style={{ fontWeight: 'bold' }}>{ifActiveOrder[order.active]}</div></div><br />
-                            <br /> <i >קבלת המוצרים ע"פ בחירתך באמצעות-<i style={{ fontWeight: 'bold' }}> {order.delivery ? 'שליח עד הבית' : 'איסוף עצמי'}</i></i>
+                            <br /> <i >קבלת המוצרים ע"פ בחירתך באמצעות<i style={{ fontWeight: 'bold' }}> {order.delivery ? 'שליח עד הבית' : 'איסוף עצמי'}</i></i>
+                            {order.delivery ?
+                                <i>לכתובת: {order.address}, {order.city}</i> : ""}
                             <br />
+                            <i>נייד ליצירת קשר:<i style={{ fontWeight: 'bold' }}> {order.phoneNumber}</i></i><br />
                             <i>סה"כ {order.paid ? 'שולם' : 'נותר לשלם'}<i style={{ fontWeight: 'bold' }}> ₪{order.totalPrice}</i></i>
                         </div>
                     </div>

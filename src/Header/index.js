@@ -31,9 +31,9 @@ export default function Header() {
                 <div className="rightSide">
                     <div className="links" id={linksChange ? "hidden" : ""}>
                         <NavLink className="nav" to='/home'>בית</NavLink>
-                        <NavLink className="nav" to='/woodenbed'>מיטות לכלבים</NavLink>
+                        <NavLink className="nav" to='/woodenbed'>מיטות מעץ</NavLink>
                         <NavLink className="nav" to='/woodenstand'>מעמד לקערות</NavLink>
-                        <NavLink className="nav" to='/contact'>צור קשר</NavLink>
+                        <NavLink className="nav" to='/contact'>יצירת קשר</NavLink>
                     </div>
                     <button onClick={() => setLinksChange(!linksChange)}>
                         <div className="menuButton"></div>
