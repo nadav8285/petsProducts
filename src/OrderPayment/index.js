@@ -57,7 +57,7 @@ const StyledButton = styled.button`
 
 
 
-export default function OrderPayment({ priceAfterAll, delivery }) {
+export default function OrderPayment({ priceAfterAll, delivery, updatedCart }) {
 
 
     const cart = useContext(CartContext)
@@ -66,7 +66,8 @@ export default function OrderPayment({ priceAfterAll, delivery }) {
     const homeHistory = useHistory()
     function tryNow() {
 
-        const mapIt = cart.cart.map((x) => x._id)
+        const mapIt = cart.cart.map((x) => { return { category: x.category, name: x.name, size: x.productInfo.size, price: x.productInfo.price, color: x.color } })
+        console.log(mapIt, 'mapit')
         setCartProductIds(mapIt)
     }
     useEffect(tryNow, [cart])
@@ -79,11 +80,14 @@ export default function OrderPayment({ priceAfterAll, delivery }) {
                 [input.name]: input.type === 'checkbox' ? input.checked : input.value
             }), {}
             )
-        values.productIds = cartProductIds
+        values.productInfo = cartProductIds
         values.delivery = delivery
         values.totalPrice = priceAfterAll
         values.paid = true
 
+        // values.productsInfo = 
+
+        // console.log(values.productIds)
         try {
 
             const res = await axios.post(`http://localhost:5000/createorder`, values)
@@ -104,6 +108,8 @@ export default function OrderPayment({ priceAfterAll, delivery }) {
         const value = e.currentTarget.value;
         setState(prev => ({ ...prev, [inputName]: value }));
     };
+
+    // console.log(cartProductIds, 'cartids')
     return (<>
         <div>
             {delivery ? <StyledFormWrapper>

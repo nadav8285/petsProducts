@@ -20,6 +20,8 @@ export default function OrderSearch() {
             try {
                 const res = await axios.get(`http://localhost:5000/readorder?orderTrackNum=${OrderId.param}`)
                 setOrder(res.data)
+                setProducts(res.data.productInfo)
+                // console.log(res.data.productInfo)
             } catch (e) {
                 console.log(e);
                 // setError(e.response?.data?.error || e.message)
@@ -29,18 +31,18 @@ export default function OrderSearch() {
 
     }, [OrderId])
 
-    useEffect(() => {
-        async function getOrderProducts() {
-            try {
-                const res = await axios.post(`http://localhost:5000/readorderproducts`, { ids: order.productIds })
-                setProducts(res.data)
-                // OrderId.setParam(res.data)
-            } catch (e) {
-                console.log("error")
-            }
-        }
-        getOrderProducts()
-    }, [order])
+    // useEffect(() => {
+    //     async function getOrderProducts() {
+    //         try {
+    //             const res = await axios.post(`http://localhost:5000/readorderproducts`, { ids: order.productIds })
+    //             setProducts(res.data)
+    //             // OrderId.setParam(res.data)
+    //         } catch (e) {
+    //             console.log("error")
+    //         }
+    //     }
+    //     getOrderProducts()
+    // }, [order])
 
 
 
@@ -50,7 +52,7 @@ export default function OrderSearch() {
     return (
 
         <>
-            {products.length === 0 ? "Not Exist Order" :
+            {!products ? "Not Exist Order" :
                 <div className="orderSearchContainer">
                     <div style={{ textAlign: 'center', direction: 'rtl' }}>
                         <h2 style={{ color: '#415894' }}>תודה על הזמנתך {order.firstName} {order.lastName}!</h2>

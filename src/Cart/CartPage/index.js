@@ -24,9 +24,9 @@ export default function CartPage() {
     }, [delivery])
     useEffect(() => {
         function totalPriceCalc() {
-            let totalPriceCopy = totalPrice
+            let totalPriceCopy = totalPrice;
             cartInfo.cart.map((x) => (
-                totalPriceCopy = totalPriceCopy + Number(x.price)
+                totalPriceCopy = totalPriceCopy + Number(x.productInfo.price)
             ))
             setTotalPrice(totalPriceCopy + delivery)
         }
@@ -74,11 +74,11 @@ export default function CartPage() {
                                     </div>
                                     <div className='cartItem'><h4><NavLink style={{ textDecoration: 'none', color: '#415894' }} activeClassName='active' to={`/${filteredCategory}/${x.name}`} >{x.name}</NavLink>
                                     </h4></div>
-                                    <div className='cartItem'><h4 >{x.size}
+                                    <div className='cartItem'><h4 >{x.productInfo.size}
                                     </h4></div>
                                     <div className='cartItem'><h4>{x.color}
                                     </h4></div>
-                                    <div className='cartItem'><h4>{x.price}₪
+                                    <div className='cartItem'><h4>{x.productInfo.price}₪
                                     </h4></div>
 
 
@@ -105,7 +105,8 @@ export default function CartPage() {
                         <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
                             <i style={{ marginRight: '25px', marginBottom: '15px', fontWeight: 'bold' }}>סה"כ לתשלום: ₪{totalPrice}</i>
                             <div style={{ textAlign: 'center', marginBottom: '5px' }}>
-                                <button disabled={totalPrice ? false : true} style={{ border: 'solid', borderWidth: '1px', backgroundColor: '#f2a128', fontWeight: 'bold', cursor: 'pointer' }} onClick={handleCheckoutBtn}>מעבר לתשלום</button>
+                                <button style={{ border: 'solid', borderWidth: '1px', backgroundColor: '#f2a128', fontWeight: 'bold', cursor: 'pointer' }} onClick={handleCheckoutBtn}>מעבר לתשלום</button>
+                                {/* disabled={totalPrice ? false : true} */}
                             </div>
                         </div>
                     </div>

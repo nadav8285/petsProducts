@@ -11,9 +11,12 @@ export default function CartPaymentBtns({ props }) {
 
     }
 
+    console.log(cart.cart)
     return (<>
+
         <div className='prdctbtn'>
             <button onClick={cartControl} className='prdctinfo'>הוסף לעגלה</button>
+
             <NavLink activeClassName='active' to='/cart'><button onClick={cartControl} className='prdctbuy'>לתשלום והזמנה</button></NavLink>
         </div>
 

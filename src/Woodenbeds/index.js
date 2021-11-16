@@ -46,7 +46,10 @@ export default function Woodenbeds() {
                         return (
                             <div className='eachPrdct' key={uuid()}>
                                 <div className="upperPrdctTitle">
-                                    <NavLink activeClassName='active' className="prdctTitle" to={`/${filteredCategory}/${x.name}`}>{x.name}</NavLink>
+                                    <NavLink activeClassName='active' className="prdctTitle" to={{
+                                        pathname: `/${filteredCategory}/${x.name}`
+                                    }}
+                                    >{x.name}</NavLink>
                                 </div>
                                 <div className='photo'>
                                     <Carousel >
